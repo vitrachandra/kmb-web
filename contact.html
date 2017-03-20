@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<HEAD>
+	<title> KMB ITB - Contact </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js"></script>
+	<!-- Add Google Maps -->
+	<script>
+		google.maps.event.addDomListener(window, 'load', initialize);
+		var loc = new google.maps.LatLng(-6.888632, 107.61044);
+
+		function initialize() {
+			var mapProp = {
+				center: loc,
+				zoom: 15,
+				scrollwheel: false,
+				draggable: false,
+			};
+
+			var map = new google.maps.Map(document.getElementById("location"), mapProp);
+			var marker = new google.maps.Marker({position: loc});
+			marker.setMap(map);
+		}
+	</script>
+</HEAD>
+
+<BODY>
+	<!--Navbar-->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" on-click="changeButton()">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<p class="navbar-brand"> KMB ITB </p>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-menu">
+				<ul class="nav navbar-nav">
+					<li><a href="Home.html"> Home </a></li>
+					<li><a href="News.html"> News </a></li>
+					<li><a href="Events.html"> Events </a></li>
+					<li><a href="Magazine.html"> Magazine </a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"> About </a>
+						<ul class="dropdown-menu">
+							<li><a href="About.html"> About KMB </a></li>
+							<li><a href="Organization.html"> Organization </a></li>
+						</ul>
+					</li>
+					<li class="active"><a href="#"> Contact </a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<!--Contact-->
+	<div class="container">
+		<div class="container-fluid text-left">
+			<h3> Contact </h3>
+			<hr>
+			<div class="row">
+				<div class="col-sm-4">
+					<div id="kmb">
+						KMB Dhammañano ITB
+					</div>
+					<div id="email">
+						email@email.com
+					</div>
+
+					<p>
+						Sunken Court E-09
+						<br>
+						Jalan Ganesha No.10
+						<br>
+						Institut Teknologi Bandung
+						<br>
+						Bandung, West Java, Indonesia
+						<br>
+					</p>
+
+					<div class="row text-center">
+						<div class="col-sm-8">
+							<button class="see-more" id="view-loc" data-toggle="modal" data-target="#maps">
+								<span>View Location</span>
+							</button>
+						</div>
+					</div>
+
+					<div class="modal fade" id="maps" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close button" data-dismiss="modal">&times;</button>
+									<h5><span class="glyphicon glyphicon-map-marker"></span>Location</h5>
+								</div>
+								<div class="modal-body">
+								<div id="location"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-8">
+					<h4> Contact Us </h4>
+					<div class="row">
+						<div class="col-xs-6">
+							Name <br>
+							<input type="text">
+						</div>
+						<div class="col-xs-6">
+							E-mail <br>
+							<input type="text">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							Comment <br>
+							<textarea class="textarea" rows="7"></textarea>
+							<button class="btn send"> Send </button>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		Copyright © KMB Dhammañano ITB
+	</div>
+</BODY>
+</div>
